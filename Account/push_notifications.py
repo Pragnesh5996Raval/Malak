@@ -1,9 +1,10 @@
 import requests
+from decouple import config
 import json
 
 class Notification:
     def Notify(deviceToken, title, message, notify_status):
-        serverToken = 'AAAABS5CEwQ:APA91bHqtOw8u7p_ErfllCpp2j_nTObmNifPXxjDHBSrpw1b_6Ds-_FFDlI6D1p_YjvjWTnOQZYy9boppVGgEcanHadWKoX_sZ68k1-7MT491cc7u84tG8I7-oAKHnMINdI10wdQtsQM'
+        serverToken = config('Firebase_Secret')
 
         headers = {
             'Content-Type': 'application/json',
